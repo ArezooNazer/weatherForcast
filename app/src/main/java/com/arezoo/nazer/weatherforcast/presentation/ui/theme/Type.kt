@@ -1,4 +1,4 @@
-package com.arezoo.nazer.weatherforcast.ui.theme
+package com.arezoo.nazer.weatherforcast.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
