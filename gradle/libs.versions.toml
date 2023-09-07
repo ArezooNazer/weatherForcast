@@ -8,6 +8,7 @@ androidGradlePlugin = "8.1.0"
 kotlinAndroid = "1.8.10"
 retrofit = "2.9.0"
 okhttp = "4.5.0"
+hilt = "2.44"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -21,8 +22,13 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 test-junit = { group = "junit", name = "junit", version.ref = "testJunit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinAndroid" }
+kotlin-plugin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+

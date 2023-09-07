@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.plugin)
+    alias(libs.plugins.hilt.plugin)
 }
 
 android {
@@ -35,6 +37,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -43,6 +46,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -60,6 +66,9 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.okhttp.interceptor)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 
