@@ -2,8 +2,8 @@ package com.arezoo.nazer.weatherforcast.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val light_primary = Color(0xFF034AF0)
-val light_onPrimary = Color(0xFFFFFFFF)
+val light_primary = Color(0xFF2196F3)
+val light_onPrimary = Color(0xFF002585)
 val light_primaryContainer = Color(0xFFDDE1FF)
 val light_onPrimaryContainer = Color(0xFF001454)
 val light_secondary = Color(0xFF5A5D72)
@@ -33,8 +33,8 @@ val light_surfaceTint = Color(0xFF034AF0)
 val light_outlineVariant = Color(0xFFC6C5D0)
 val light_scrim = Color(0xFF000000)
 
-val dark_primary = Color(0xFFB8C4FF)
-val dark_onPrimary = Color(0xFF002585)
+val dark_primary = Color(0xFF034AF0)
+val dark_onPrimary = Color(0xFFFFFFFF)
 val dark_primaryContainer = Color(0xFF0037BA)
 val dark_onPrimaryContainer = Color(0xFFDDE1FF)
 val dark_secondary = Color(0xFFC2C5DD)
