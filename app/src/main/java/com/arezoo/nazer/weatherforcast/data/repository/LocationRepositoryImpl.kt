@@ -1,6 +1,7 @@
 package com.arezoo.nazer.weatherforcast.data.repository
 
-import android.Manifest
+import android.Manifest.permission.ACCESS_COARSE_LOCATION
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
@@ -25,7 +26,7 @@ class LocationRepositoryImpl @Inject constructor(
 
         val locationManager = application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-        if (locationManager.isLocationAvailable()) {
+        if (locationManager.isLocationNotAvailable()) {
             return Result.failure(Exception("Location is not available, check the location permissions and GPS availability"))
         }
 
@@ -59,10 +60,9 @@ class LocationRepositoryImpl @Inject constructor(
             isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
 
-    private fun LocationManager.isLocationAvailable(): Boolean {
-        val hasAccessFineLocationPermission = application.hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-        val hasAccessCoarseLocationPermission = application.hasPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-
+    private fun LocationManager.isLocationNotAvailable(): Boolean {
+        val hasAccessFineLocationPermission = application.hasPermission(ACCESS_FINE_LOCATION)
+        val hasAccessCoarseLocationPermission = application.hasPermission(ACCESS_COARSE_LOCATION)
         return !hasAccessCoarseLocationPermission || !hasAccessFineLocationPermission || !isGpsEnabled()
     }
 }
