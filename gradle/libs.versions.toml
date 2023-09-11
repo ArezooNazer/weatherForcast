@@ -3,13 +3,17 @@ ktx = "1.9.0"
 androidxLifecycleRuntime = "2.6.1"
 androidxActivityCompose = "1.7.2"
 androidxComposeBom = "2023.03.00"
-testJunit = "4.13.2"
 androidGradlePlugin = "8.1.0"
 kotlinAndroid = "1.8.10"
 retrofit = "2.9.0"
 okhttp = "4.5.0"
 hilt = "2.44"
 servicesLocation = "21.0.1"
+testJunit = "4.13.2"
+testMockitoCore = "4.8.0"
+testMockitoKotlin = "2.2.0"
+testKotlinCoroutines = "1.6.4"
+testAndroidxCore = "2.2.0"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -27,7 +31,12 @@ okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-intercept
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "servicesLocation" }
+
 test-junit = { group = "junit", name = "junit", version.ref = "testJunit" }
+test-mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "testMockitoCore" }
+test-mockito-kotlin = { group = "com.nhaarman.mockitokotlin2", name = "mockito-kotlin", version.ref = "testMockitoKotlin" }
+test-kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "testKotlinCoroutines" }
+test-androidx-arch-core = { group = "androidx.arch.core", name = "core-testing", version.ref = "testAndroidxCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

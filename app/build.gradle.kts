@@ -17,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        testOptions {
+            unitTests.isReturnDefaultValues = true
+        }
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -76,4 +81,8 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.test.junit)
+    testImplementation(libs.test.mockito.core)
+    testImplementation(libs.test.mockito.kotlin)
+    testImplementation(libs.test.kotlinx.coroutines)
+    testImplementation(libs.test.androidx.arch.core)
 }
