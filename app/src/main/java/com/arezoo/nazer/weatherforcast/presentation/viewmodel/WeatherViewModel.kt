@@ -1,7 +1,6 @@
 package com.arezoo.nazer.weatherforcast.presentation.viewmodel
 
 import android.location.Location
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.arezoo.nazer.weatherforcast.domain.model.WeatherUiState
@@ -26,11 +25,9 @@ class WeatherViewModel @Inject constructor(
         viewModelScope.launch {
             locationRepository.getUserCurrentLocation().fold(
                 onSuccess = {
-                    Log.d(TAG, "loadWeatherData: success = $it")
                     getWeatherDataBasedOnLocation(it)
                 },
                 onFailure = {
-                    Log.d(TAG, "loadWeatherData: error = $it")
                     _weatherUiState.value = WeatherUiState.Error(it.message ?: "Unknown Error")
                 }
             )
@@ -44,16 +41,12 @@ class WeatherViewModel @Inject constructor(
                 longitude = location.longitude
             ).fold(
                 onSuccess = {
-                    Log.d(TAG, "loadWeatherData() called success = $it")
                     _weatherUiState.value = WeatherUiState.Success(it)
                 },
                 onFailure = {
-                    Log.d(TAG, "loadWeatherData: error = $it")
                     _weatherUiState.value = WeatherUiState.Error(it.message ?: "Unknown Error")
                 }
             )
         }
     }
 }
-
-private const val TAG = "WeatherViewModel"
