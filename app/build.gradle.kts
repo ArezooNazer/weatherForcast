@@ -70,6 +70,8 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
+    implementation(libs.services.location)
+
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.test.junit)
