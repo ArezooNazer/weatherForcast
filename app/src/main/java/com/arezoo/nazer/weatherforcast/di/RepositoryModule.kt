@@ -1,6 +1,8 @@
 package com.arezoo.nazer.weatherforcast.di
 
+import com.arezoo.nazer.weatherforcast.data.repository.LocationRepositoryImpl
 import com.arezoo.nazer.weatherforcast.data.repository.WeatherRepositoryImpl
+import com.arezoo.nazer.weatherforcast.domain.repository.LocationRepository
 import com.arezoo.nazer.weatherforcast.domain.repository.WeatherRepository
 import dagger.Binds
 import dagger.Module
@@ -15,4 +17,9 @@ interface RepositoryModule {
     fun bindWeatherRepository(
         weatherRepositoryImpl: WeatherRepositoryImpl,
     ): WeatherRepository
+
+    @Binds
+    fun bindLocationRepository(
+        locationRepositoryImpl: LocationRepositoryImpl,
+    ): LocationRepository
 }
